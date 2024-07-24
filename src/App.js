@@ -8,6 +8,9 @@ import Cart from './components/Cart';
 import LoginSignup from './components/LoginSignup'; 
 import Hero from './components/Hero/Hero';
 import About from './pages/About';
+import Footer from './Context/Footer/Footer';
+import './index.css'
+
 function App() {
   return (
     <div>
@@ -28,6 +31,7 @@ function App() {
      
      <Hero/>
      </BrowserRouter>
+     <Footer/>
     </div>
   );
 }

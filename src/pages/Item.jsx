@@ -1,9 +1,12 @@
 import React from 'react'
+import Hero from '../components/Hero'
 
-export default function Item() {
+const Item = () => {
   return (
     <div>
-      
+      <Hero/>
     </div>
-  )
-}
+  );
+};
+
+export default Item;

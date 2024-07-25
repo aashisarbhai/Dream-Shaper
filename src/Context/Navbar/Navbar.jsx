@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-
 import logo from '../../Assets/logo.jpeg';
-import cart_icon from '../../Assets/cart_icon.jpg';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -10,9 +8,10 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
+      <i class="fa-solid fa-bars"></i>
       <div className="nav-logo">
         <img src={logo} alt="logo" />
-        <p>Dream Shaper</p>
+        <h2>Dream Shaper</h2>
       </div>
       <ul className="nav-menu">
         <li onClick={() => { setMenu("Home") }}>
@@ -30,9 +29,11 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         <Link to='/login'><button>Login</button></Link>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      <i class="fa-solid fa-user"></i>
-      <Link to='/cart_icon'><img src={cart_icon} alt="cart" /></Link>
+        <div className="icons">
+          <i className="fa-regular fa-user"></i>
+          <i className="fa-regular fa-heart"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
+        </div>
         <div className="nav-cart-count">0</div>
       </div>
     </div>

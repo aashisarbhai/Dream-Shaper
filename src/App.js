@@ -14,9 +14,7 @@ import './index.css';
 function App() {
   return (
     <div>
-      {/* 8guihyuihybiuh */}
-
-      {/* fghjhfhhfh */}
+      
       <BrowserRouter>
      <Navbar/>
      <Routes>
@@ -29,7 +27,7 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/login' element={<LoginSignup/>}/>
      </Routes>
-     
+     <About/>
      <Hero/>
      </BrowserRouter>
      <Footer/>

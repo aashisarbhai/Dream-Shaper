@@ -3,7 +3,7 @@ import Navbar from './Context/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShopCategory from './pages/ShopCategory';
 import Home from './pages/Home';
-import WishList from './components/WishList'; 
+import WishList from './Context/Navbar/WishList';
 import Cart from './components/Cart';        
 import LoginSignup from './components/LoginSignup'; 
 import Hero from './components/Hero/Hero';

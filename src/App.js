@@ -15,15 +15,6 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* shdeihf */}
-      {/* dhbgfhdbfds */}
-      {/* fhrfh */}
-      {/* hdhgfjf */}
-      {/* jgl;k */}
-      {/* hcuwdfhui */}
-      {/* DBGCHKDA */}
-      {/* dhiyrffihu */}
-      {/* etrdrtd */}
       <BrowserRouter>
      <Navbar/>
      <Routes>

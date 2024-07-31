@@ -16,8 +16,8 @@ const ProfileSection = ({ isActive, toggleProfileSection }) => {
       <h2>Welcome</h2>
       <p>To access account and manage orders</p>
       
-      <button className="login-signup-btn">LOGIN / SIGNUP</button>
-      
+      <Link to="/LoginSignup"><button className="login-signup-btn">LOGIN / SIGNUP</button>
+      </Link>
       <ul className="profile-menu">
         {menuItems.map((item, index) => (
           <li key={index}>

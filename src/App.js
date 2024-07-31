@@ -5,17 +5,19 @@ import ShopCategory from './pages/ShopCategory';
 import Home from './pages/Home';
 import WishList from './pages/WishList';
 import Cart from './components/Cart';
-import LoginSignup from './components/LoginSignup';
+import LoginSignup from './pages/LoginSignup';
 import Hero from './components/Hero/Hero';
 import About from './pages/About';
 import Footer from './Context/Footer/Footer';
 import ProfileSection from './Context/Navbar/ProfileSection';
+
 import './index.css';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+      
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,7 +26,7 @@ function App() {
           <Route path="/notification" element={<ShopCategory category="Notification" />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/LoginSignup" element={<LoginSignup />} />
         </Routes>
         <Hero />
         <Footer />

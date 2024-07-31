@@ -1,16 +1,21 @@
-// Navbar.js
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../Assets/logo.jpeg';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import ProfileSection from './ProfileSection';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   const [sidebarActive, setSidebarActive] = useState(false);
+  const [profileActive, setProfileActive] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);
+  };
+
+  const toggleProfile = () => {
+    setProfileActive(!profileActive);
   };
 
   return (
@@ -35,16 +40,15 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to='/login'><button>Login</button></Link>
         <div className="icons">
-          <i className="fa-regular fa-user"></i>
+          <i className="fa-regular fa-user" onClick={toggleProfile}></i>
           <i className="fa-regular fa-heart"></i>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         <div className="nav-cart-count">0</div>
       </div>
 
-      {/* Include the Sidebar component */}
+      <ProfileSection isActive={profileActive} onClose={toggleProfile} />
       <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} />
     </div>
   );

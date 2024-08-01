@@ -30,10 +30,7 @@ const Navbar = () => {
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
         </li>
         <li onClick={() => { setMenu("Item") }}>
-          <Link to='/item' className={menu === "Item" ? "active" : ""}>Item</Link>
-        </li>
-        <li onClick={() => { setMenu("Notification") }}>
-          <Link to='/notification' className={menu === "Notification" ? "active" : ""}>Notification</Link>
+          <Link to='/item' className={menu === "Item" ? "active" : ""}>Products</Link>
         </li>
         <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
@@ -41,14 +38,19 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         <div className="icons">
-          <i className="fa-regular fa-user" onClick={toggleProfile}></i>
+          <div 
+            className="profile-icon"
+            onMouseEnter={() => setProfileActive(true)}
+            onMouseLeave={() => setProfileActive(false)}
+          >
+            <i className="fa-regular fa-user"></i>
+            {profileActive && <ProfileSection isActive={profileActive} onClose={() => setProfileActive(false)} />}
+          </div>
           <i className="fa-regular fa-heart"></i>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         <div className="nav-cart-count">0</div>
       </div>
-
-      <ProfileSection isActive={profileActive} onClose={toggleProfile} />
       <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} />
     </div>
   );

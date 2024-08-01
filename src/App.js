@@ -10,7 +10,6 @@ import Hero from './components/Hero/Hero';
 import About from './pages/About';
 import Footer from './Context/Footer/Footer';
 import ProfileSection from './Context/Navbar/ProfileSection';
-
 import './index.css';
 
 function App() {

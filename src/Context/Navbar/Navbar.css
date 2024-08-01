@@ -169,3 +169,16 @@
   cursor: pointer;
   color: #fff;
 }
+
+/* Add this to your Navbar.css file */
+.profile-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.ProfileSection {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+}

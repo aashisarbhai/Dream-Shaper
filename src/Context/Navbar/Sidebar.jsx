@@ -1,4 +1,3 @@
-// Sidebar.js
 import React from 'react';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
@@ -18,7 +17,7 @@ const Sidebar = ({ isActive, toggleSidebar }) => {
           <Link to='/Orders'>Orders</Link>
         </li>
         <li onClick={toggleSidebar}>
-          <Link to='/Wishlist'>Wishlist</Link>
+          <Link to='./pages/Wishlist'>Wishlist</Link>
         </li>
         <li onClick={toggleSidebar}>
           <Link to='/Logout'>Logout</Link>

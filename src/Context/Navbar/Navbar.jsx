@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../Assets/logo.jpeg';
 import { Link } from 'react-router-dom';
-import Sidebar from './Sidebar';
+//import Sidebar from './Sidebar';
 import ProfileSection from './ProfileSection';
+import ProductSection from './ProductSection';
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("shop");
-  const [sidebarActive, setSidebarActive] = useState(false);
+  const [menu, setMenu] = useState("Home");
+  //const [sidebarActive, setSidebarActive] = useState(false);
   const [profileActive, setProfileActive] = useState(false);
+  const [productActive, setProductActive] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarActive(!sidebarActive);
-  };
+  // const toggleSidebar = () => {
+  //   setSidebarActive(!sidebarActive);
+  // };
 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
@@ -20,7 +22,7 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <i className="fa-solid fa-bars" onClick={toggleSidebar}></i>
+      {/* <i className="fa-solid fa-bars" onClick={toggleSidebar}></i> */}
       <div className="nav-logo">
         <img src={logo} alt="logo" />
         <h2>Dream Shaper</h2>
@@ -29,8 +31,16 @@ const Navbar = () => {
         <li onClick={() => { setMenu("Home") }}>
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
         </li>
-        <li onClick={() => { setMenu("Item") }}>
-          <Link to='/item' className={menu === "Item" ? "active" : ""}>Products</Link>
+        <li 
+          className="product-menu-item"
+          onMouseEnter={() => setProductActive(true)}
+          onMouseLeave={() => setProductActive(false)}
+          onClick={() => { setMenu("Item") }}
+        >
+          <Link to='/item' className={menu === "Item" ? "active" : ""}>
+            Products
+          </Link>
+          {productActive && <ProductSection isActive={productActive} onClose={() => setProductActive(false)} />}
         </li>
         <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
@@ -51,7 +61,7 @@ const Navbar = () => {
         </div>
         <div className="nav-cart-count">0</div>
       </div>
-      <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} />
+      {/* <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} /> */}
     </div>
   );
 };

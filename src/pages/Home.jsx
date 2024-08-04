@@ -1,9 +1,14 @@
 import React from 'react'
+import Hero from '../components/Hero/Hero';
+import Newsletter from '../components/Newsletter'
 
-export default function Home() {
-  return (
+const Home = () => {
+  return(
     <div>
-      
+      <Hero />
+      <Newsletter />
     </div>
   )
 }
+
+export default Home;

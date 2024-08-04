@@ -7,6 +7,7 @@
   position: relative;
   z-index: 1001;
   color: white;
+  width: 96.8%;
 }
 
 .nav-logo {
@@ -170,7 +171,6 @@
   color: #fff;
 }
 
-/* Add this to your Navbar.css file */
 .profile-icon {
   position: relative;
   cursor: pointer;
@@ -180,5 +180,79 @@
   position: absolute;
   top: 100%;
   right: 0;
+  z-index: 1000;
+}
+
+.product-section {
+  position: fixed;
+  top: 0;
+  right: -250px; 
+  width: 250px;
+  height: 100%;
+  background-color: #333333;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.product-section.active {
+  right: 0; 
+}
+
+.product-section h2 {
+  margin: 0;
+  font-size: 18px;
+  padding: 20px 15px;
+  border-bottom: 1px solid #444;
+}
+
+.product-section p {
+  margin: 0;
+  font-size: 14px;
+  padding: 15px;
+  color: #ccc;
+  border-bottom: 1px solid #444;
+}
+
+.product-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-menu li {
+  padding: 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-menu li:hover {
+  background-color: #444;
+}
+
+.new-tag {
+  background-color: #ff3f6c;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.close-product {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.ProductSection {
+  position: absolute;
+  top: 100%;
   z-index: 1000;
 }

@@ -6,10 +6,10 @@ import Home from './pages/Home';
 import WishList from './pages/WishList';
 import Cart from './components/Cart';
 import LoginSignup from './pages/LoginSignup';
-import Hero from './components/Hero/Hero';
 import About from './pages/About';
 import Footer from './Context/Footer/Footer';
 import ProfileSection from './Context/Navbar/ProfileSection';
+import ProductSection from './Context/Navbar/ProductSection';
 import './index.css';
 
 function App() {
@@ -27,9 +27,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/LoginSignup" element={<LoginSignup />} />
         </Routes>
-        <Hero />
         <Footer />
         <ProfileSection />
+        <ProductSection/>
       </BrowserRouter>
     </div>
   );

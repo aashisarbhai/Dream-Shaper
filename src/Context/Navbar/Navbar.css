@@ -81,6 +81,31 @@
   cursor: pointer;
 }
 
+.nav-search {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.nav-search input {
+  border: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+}
+
+.nav-search button {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-search button i {
+  font-size: 1.2em;
+}
+
 .nav-cart-count {
   background-color: red;
   border-radius: 50%;
@@ -183,7 +208,7 @@
   z-index: 1000;
 }
 
-.product-section {
+/* .product-section {
   position: fixed;
   top: 0;
   right: -250px; 
@@ -255,4 +280,4 @@
   position: absolute;
   top: 100%;
   z-index: 1000;
-}
+} */

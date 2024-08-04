@@ -4,13 +4,14 @@ import logo from '../../Assets/logo.jpeg';
 import { Link } from 'react-router-dom';
 //import Sidebar from './Sidebar';
 import ProfileSection from './ProfileSection';
-import ProductSection from './ProductSection';
+//import ProductSection from './ProductSection';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Home");
   //const [sidebarActive, setSidebarActive] = useState(false);
   const [profileActive, setProfileActive] = useState(false);
   const [productActive, setProductActive] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // const toggleSidebar = () => {
   //   setSidebarActive(!sidebarActive);
@@ -18,6 +19,16 @@ const Navbar = () => {
 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Implement the search functionality here
+    console.log('Search Term:', searchTerm);
   };
 
   return (
@@ -31,7 +42,7 @@ const Navbar = () => {
         <li onClick={() => { setMenu("Home") }}>
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
         </li>
-        <li 
+        {/* <li 
           className="product-menu-item"
           onMouseEnter={() => setProductActive(true)}
           onMouseLeave={() => setProductActive(false)}
@@ -41,11 +52,22 @@ const Navbar = () => {
             Products
           </Link>
           {productActive && <ProductSection isActive={productActive} onClose={() => setProductActive(false)} />}
-        </li>
+        </li> */}
         <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
         </li>
       </ul>
+      <form className="nav-search" onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        <button type="submit">
+          <i className="fa fa-search"></i>
+        </button>
+      </form>
       <div className="nav-login-cart">
         <div className="icons">
           <div 

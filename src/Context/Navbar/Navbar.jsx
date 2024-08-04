@@ -10,7 +10,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState("Home");
   //const [sidebarActive, setSidebarActive] = useState(false);
   const [profileActive, setProfileActive] = useState(false);
-  const [productActive, setProductActive] = useState(false);
+  //const [productActive, setProductActive] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   // const toggleSidebar = () => {
@@ -34,10 +34,12 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       {/* <i className="fa-solid fa-bars" onClick={toggleSidebar}></i> */}
+      
       <div className="nav-logo">
         <img src={logo} alt="logo" />
         <h2>Dream Shaper</h2>
       </div>
+      
       <ul className="nav-menu">
         <li onClick={() => { setMenu("Home") }}>
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>

@@ -10,49 +10,79 @@ import necklace from '../../Assets/necklace.png';
 import paint from '../../Assets/paint.png';
 import resin from '../../Assets/resin.png';
 import wallhanging from '../../Assets/wallhanging.png';
+import { Link } from 'react-router-dom';
 
 const Productbar = () => {
   return (
     <div className="bar">
       <div className="product">
+        <Link to='../pages/Portraits'>
         <img src={familyPicture} alt="family portrait" /> 
         <p>Portrait</p>
+        </Link>
       </div>
+      
       <div className="product">
+      <Link to='../pages/ResinArt'>
         <img src={resin} alt="resin" />
         <p>Resin Art</p>
+        </Link>
       </div>
+      
       <div className="product">
+        <Link to='../pages/Bookmark'>
         <img src={bookmark} alt="bookmark" />
         <p>Bookmark</p>
-      </div>
+        </Link>
+        </div>
+
       <div className="product">
+        <Link to='../pages/Keychains'>
         <img src={keychain} alt="keychain" />
         <p>Keychain</p>
-      </div>
+        </Link>
+        </div>
+
       <div className="product">
+        <Link to='../pages/Polaroid'>
         <img src={polaroid} alt="polaroid" />
         <p>Polaroid</p>
-      </div>
+        </Link>
+       </div>
+
       <div className="product">
+        <Link to='../pages/LippanArt'>
         <img src={mandala} alt="mandala" />
         <p>Lippan Art</p>
+        </Link>
       </div>
+      
       <div className="product">
+        <Link to='../pages/Necklace'>
         <img src={necklace} alt="necklace" />
         <p>Necklace</p>
+        </Link>
       </div>
+      
       <div className="product">
+        <Link to='../pages/Painting'>
         <img src={paint} alt="paint" />
         <p>Paintings</p>
+        </Link>
       </div>
+
       <div className="product">
+        <Link to='../pages/Purse'>
         <img src={bag} alt="bag" />
-        <p>Bag</p>
+        <p>Purse</p>
+        </Link>
       </div>
+
       <div className="product">
+        <Link to='../pages/WallHanging'>
         <img src={wallhanging} alt="wallhanging" />
         <p>Wall Hanging</p>
+        </Link>
       </div>
     </div>
   );

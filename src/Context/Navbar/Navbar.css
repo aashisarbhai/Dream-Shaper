@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: maroon;
   padding: 10px 20px;
   position: relative;
   z-index: 1001;
@@ -43,7 +43,7 @@
 }
 
 .nav-menu a.active {
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid maroon;
 }
 
 .nav-menu a:hover {
@@ -58,7 +58,7 @@
 .nav-login-cart button {
   margin-right: 15px;
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: maroon;
   border: none;
   color: white;
   cursor: pointer;

@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className="founder-page">
       <div className="image-section">
-        {/* Placeholder for Images */}
+        {/* Placeholder for Imagesdnfj */}
         <img src={photo5}  alt="Founder" className="image"/>
         <img src={photo4}  alt="Founder" className="image"/>
         <img src={photo5}  alt="Founder" className="image"/>

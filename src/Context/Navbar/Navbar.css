@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: maroon;
   padding: 10px 20px;
   position: relative;
   z-index: 1001;
   color: white;
+  width: 96.8%;
 }
 
 .nav-logo {
@@ -42,7 +43,7 @@
 }
 
 .nav-menu a.active {
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid maroon;
 }
 
 .nav-menu a:hover {
@@ -57,7 +58,7 @@
 .nav-login-cart button {
   margin-right: 15px;
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: maroon;
   border: none;
   color: white;
   cursor: pointer;
@@ -78,6 +79,38 @@
   font-size: 1.2em;
   margin-right: 15px;
   cursor: pointer;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  font-size: 14px;
+  outline: none;
+  width: 200px;
+}
+
+.nav-search button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-search button:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-search i {
+  color: #555;
 }
 
 .nav-cart-count {
@@ -169,3 +202,89 @@
   cursor: pointer;
   color: #fff;
 }
+
+.profile-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.ProfileSection {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+}
+
+/* .product-section {
+  position: fixed;
+  top: 0;
+  right: -250px; 
+  width: 250px;
+  height: 100%;
+  background-color: #333333;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.product-section.active {
+  right: 0; 
+}
+
+.product-section h2 {
+  margin: 0;
+  font-size: 18px;
+  padding: 20px 15px;
+  border-bottom: 1px solid #444;
+}
+
+.product-section p {
+  margin: 0;
+  font-size: 14px;
+  padding: 15px;
+  color: #ccc;
+  border-bottom: 1px solid #444;
+}
+
+.product-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-menu li {
+  padding: 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-menu li:hover {
+  background-color: #444;
+}
+
+.new-tag {
+  background-color: #ff3f6c;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.close-product {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.ProductSection {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+} */

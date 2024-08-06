@@ -12,11 +12,27 @@
     margin-bottom: 20px;
   }
   
+
+  
   .image {
     width: 5%;
     height: auto;
+    border-radius: 50%;
+  }
+
+  .image1 {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
   }
   
+  .image2 {
+    width: 50%;
+    height: auto;
+    border: 5px solid #555;
+    border-radius: 50%;
+  }
+
   .text-section1 {
     text-align: center;
     width: 80%;
@@ -24,7 +40,7 @@
   }
   
   .text-section2 {
-    text-align: right;
+    text-align: left;
     width: 80%;
     margin-bottom: 20px;
   }
@@ -41,4 +57,5 @@
     text-decoration: none;
     border-radius: 5px;
   }
+  
   

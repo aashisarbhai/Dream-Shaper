@@ -69,7 +69,30 @@ app.post('/signup', async (req, res) => {
     }
   });
 
+//api for email address
 
+const Subscriber = require('./config/Subscriber');
+
+// Endpoint to add a new subscriber
+app.post('/subscribe', async (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ error: 'Email is required' });
+    }
+
+    try {
+        const newSubscriber = new Subscriber({ email });
+        await newSubscriber.save();
+        res.status(201).json({ message: 'Successfully subscribed' });
+    } catch (error) {
+        if (error.code === 11000) {
+            res.status(400).json({ error: 'Email already subscribed' });
+        } else {
+            res.status(500).json({ error: 'Server error' });
+        }
+    }
+});
 
 // Add product API
 app.post('/productsadd', async (req, res) => {

@@ -65,6 +65,85 @@ app.post('/signup', async (req, res) => {
     }
   });
   
+  //portraits
+  app.get('/products/portraits', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'portraits' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
+    //ResinArt
+    app.get('/products/ResinArt', async (req, res) => {
+      try {
+        const products = await Product.find({ category: 'ResinArt' });
+        res.json(products);
+      } catch (err) {
+        res.status(500).send('Server error: ' + err.message);
+      }
+    });
+
+      //Bookmark
+  app.get('/products/Bookmark', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'Bookmark' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
+   //Keychains
+   app.get('/products/Keychains', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'Keychains' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
+   //LippanArt
+   app.get('/products/LippanArt', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'LippanArt' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
+  //Necklace
+  app.get('/products/Necklace', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'Necklace' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
+//Paintings
+app.get('/products/Paintings', async (req, res) => {
+  try {
+    const products = await Product.find({ category: 'Paintings' });
+    res.json(products);
+  } catch (err) {
+    res.status(500).send('Server error: ' + err.message);
+  }
+});
+
+// Purse
+  app.get('/products/Purse', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'Purse' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
 
 
   // Fetch a single product by ID

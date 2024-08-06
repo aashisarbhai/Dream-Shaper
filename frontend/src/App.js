@@ -23,8 +23,7 @@ function App() {
       
         <Navbar />
         
-        <Login/>
-        <Signup/>
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

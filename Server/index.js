@@ -145,6 +145,16 @@ app.get('/products/Paintings', async (req, res) => {
     }
   });
 
+  //WallHanging
+  app.get('/products/WallHanging', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'WallHanging' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
 
   // Fetch a single product by ID
   app.get('/product/:id', async (req, res) => {

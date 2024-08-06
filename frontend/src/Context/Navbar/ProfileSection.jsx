@@ -18,7 +18,7 @@ const ProfileSection = ({ isActive, onClose }) => {
       <h2>Welcome</h2>
       <p>To access account and manage orders</p>
       
-      <Link to="/LoginSignup">
+      <Link to="/Login">
         <button className="login-signup-btn">LOGIN / SIGNUP</button>
       </Link>
       <ul className="profile-menu">

@@ -44,7 +44,7 @@ const Productbar = () => {
         </div>
 
       <div className="product">
-        <Link to='../pages/Polaroid'>
+        <Link to='../pages/Polaroids'>
         <img src={polaroid} alt="polaroid" />
         <p>Polaroid</p>
         </Link>

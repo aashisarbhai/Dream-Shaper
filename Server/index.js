@@ -165,10 +165,12 @@ app.get('/products/Paintings', async (req, res) => {
       }
       res.json(product);
     } catch (err) {
+      console.error('Error fetching product by ID:', err); // Log the error on the server-side
       res.status(500).json({ message: err.message });
     }
   });
 
+  
 //api for email address
 
 const Subscriber = require('./config/Subscriber');

@@ -22,6 +22,7 @@ import Necklace from './pages/Necklace';
 import Paintings from './pages/Paintings';
 import Purse from './pages/Purse';
 import WallHanging from './pages/WallHanging';
+import ProductDetail from './pages/ProductDetail';
 
 import './index.css';
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/pages/Paintings" element={<Paintings />} />
           <Route path="/pages/Purse" element={<Purse />} />
           <Route path="/pages/WallHanging" element={<WallHanging />} />
+          <Route path="/product/:id" element={<ProductDetail/>} />
         </Routes>
         <Footer />
         <ProfileSection />

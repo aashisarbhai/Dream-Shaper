@@ -10,6 +10,6 @@ const mongoose = require('mongoose');
     category: String
   });
 
-const Product = mongoose.model('Products', productSchema);
+const Product = mongoose.model('products', productSchema);
 
 module.exports = Product;

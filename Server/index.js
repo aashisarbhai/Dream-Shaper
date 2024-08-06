@@ -5,6 +5,7 @@ const Product = require('./config/products');
 const port = 3389;
 const app = express();
 const cors = require('cors');
+const CartItem = require('./config/CartItem')
 // const path = require('path');
 
 // // Serve static files from the React app
@@ -206,6 +207,70 @@ app.post('/productsadd', async (req, res) => {
     res.status(400).send('Error adding product: ' + err.message);
   }
 });
+app.post('/cart', async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    let cartItem = await CartItem.findOne({ userId, productId });
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cartItem = new CartItem({ userId, productId, quantity });
+    }
+
+    await cartItem.save();
+    res.status(201).json(cartItem);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+// Add item to cart
+app.post('/cart', async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    let cartItem = await CartItem.findOne({ userId, productId });
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cartItem = new CartItem({ userId, productId, quantity });
+    }
+
+    await cartItem.save();
+    res.status(201).json(cartItem);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Get cart items for a user
+app.get('/cart/:userId', async (req, res) => {
+  try {
+    const cartItems = await CartItem.find({ userId: req.params.userId }).populate('productId');
+    res.json(cartItems);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Remove item from cart
+app.delete('/cart/:id', async (req, res) => {
+  try {
+    await CartItem.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Item removed from cart' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 
 // Make the server listen to the specified port
 app.listen(port, () => {

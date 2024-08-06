@@ -16,7 +16,7 @@ const About = () => {
       <marquee> 
         <img src={photo5}  alt="Founder" className="image"/>
         <img src={photo4}  alt="Founder" className="image"/>
-        <img src={photo5}  alt="Founder" className="image"/>
+        <img src={photo6}  alt="Founder" className="image"/>
         </marquee>
       </div>  
     

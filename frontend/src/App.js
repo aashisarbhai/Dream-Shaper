@@ -12,7 +12,8 @@ import About from './pages/About';
 import Footer from './Context/Footer/Footer';
 import ProfileSection from './Context/Navbar/ProfileSection';
 import ProductSection from './Context/Navbar/ProductSection';
-
+import Polaroids from './pages/Polaroids';
+import ProductCard from './pages/ProductCard';
 
 import './index.css';
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
+          <Route path="/pages/polaroids" element={<Polaroids />} />
         </Routes>
         <Footer />
         <ProfileSection />

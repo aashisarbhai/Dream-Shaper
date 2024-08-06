@@ -55,6 +55,17 @@ app.post('/signup', async (req, res) => {
       res.status(500).send('Server error: ' + err.message);
     }
   });
+  //polaroids
+  app.get('/products/polaroids', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'polaroids' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+  
+
 
   // Fetch a single product by ID
   app.get('/product/:id', async (req, res) => {

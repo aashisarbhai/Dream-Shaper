@@ -12,6 +12,8 @@ import About from './pages/About';
 import Footer from './Context/Footer/Footer';
 import ProfileSection from './Context/Navbar/ProfileSection';
 import ProductSection from './Context/Navbar/ProductSection';
+
+
 import './index.css';
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
       <BrowserRouter>
       
         <Navbar />
+        
+        <Login/>
+        <Signup/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

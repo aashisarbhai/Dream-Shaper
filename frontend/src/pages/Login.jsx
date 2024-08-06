@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function Login() {
     password: ''
   });
   const [error, setError] = useState('');
+  const [isSignup, setIsSignup] = useState(false);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -34,30 +36,59 @@ function Login() {
     }
   };
 
+  const toggleForm = () => {
+    setIsSignup(!isSignup);
+    setError('');
+  };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Login Page</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-        <button type="submit" className="btn btn-success mt-3">Login</button>
-        <button type="button" className="btn btn-primary mt-3" onClick={() => window.location.href = '/Signup'}>Signup</button>
-      </form>
+    <div className="container">
+      <div className={`form-container ${isSignup ? 'right-panel-active' : ''}`}>
+        <div className="form-container__form form-container__signin">
+          <form onSubmit={handleSubmit}>
+            <h2>Login</h2>
+            {error && <p className="error">{error}</p>}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+        <div className="form-container__form form-container__signup">
+          <form>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div className="form-container__overlay">
+          <div className="form-container__overlay-panel form-container__overlay-left">
+            <h2>Welcome Back!</h2>
+            <p>To keep connected with us please login with your personal info</p>
+            <button className="ghost" onClick={toggleForm}>Login</button>
+          </div>
+          <div className="form-container__overlay-panel form-container__overlay-right">
+            <h2>Hello, Friend!</h2>
+            <p>Enter your personal details and start journey with us</p>
+            <button className="ghost" onClick={toggleForm}>Sign Up</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

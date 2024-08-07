@@ -17,7 +17,7 @@ import ResinArt from './pages/ResinArt';
 import Bookmark from './pages/Bookmark';
 import Keychains from './pages/Keychains';
 import LippanArt from './pages/LippanArt';
-import Necklace from './pages/Necklace';
+import FridgeMagnet from './pages/FridgeMagnet';
 import Paintings from './pages/Paintings';
 import Purse from './pages/Purse';
 import WallHanging from './pages/WallHanging';
@@ -50,7 +50,7 @@ function App() {
           <Route path="/pages/Bookmark" element={<Bookmark />} />
           <Route path="/pages/Keychains" element={<Keychains />} />
           <Route path="/pages/LippanArt" element={<LippanArt />} />
-          <Route path="/pages/Necklace" element={<Necklace />} />
+          <Route path="/pages/FridgeMagnet" element={<FridgeMagnet />} />
           <Route path="/pages/Paintings" element={<Paintings />} />
           <Route path="/pages/Purse" element={<Purse />} />
           <Route path="/pages/WallHanging" element={<WallHanging />} />

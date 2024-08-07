@@ -6,7 +6,7 @@ import bookmark from '../../Assets/bookmark.png';
 import keychain from '../../Assets/keychain.png';
 import polaroid from '../../Assets/polaroid.png';
 import mandala from '../../Assets/mandala.png';
-import necklace from '../../Assets/necklace.png';
+import fridge from '../../Assets/fridge.png';
 import paint from '../../Assets/paint.png';
 import resin from '../../Assets/resin.png';
 import wallhanging from '../../Assets/wallhanging.png';
@@ -58,9 +58,9 @@ const Productbar = () => {
       </div>
       
       <div className="product">
-        <Link to='../pages/Necklace'>
-        <img src={necklace} alt="necklace" />
-        <p>Necklace</p>
+        <Link to='../pages/FridgeMagnet'>
+        <img src={fridge} alt="fridge" />
+        <p>Fridge Magnets</p>
         </Link>
       </div>
       

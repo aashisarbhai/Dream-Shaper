@@ -23,8 +23,8 @@ import Paintings from './pages/Paintings';
 import Purse from './pages/Purse';
 import WallHanging from './pages/WallHanging';
 import ProductDetail from './pages/ProductDetail';
-// import PlacingOrder from './pages/PlacingOrder'; 
-// import ProductSummary from './pages/ProductSummary'; 
+import PlacingOrder from './pages/PlacingOrder'; 
+import ProductSummary from './pages/ProductSummary'; 
 
 import './index.css';
 
@@ -56,8 +56,8 @@ function App() {
           <Route path="/pages/Purse" element={<Purse />} />
           <Route path="/pages/WallHanging" element={<WallHanging />} />
           <Route path="/product/:id" element={<ProductDetail/>} />
-          {/* <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
-          <Route path="/product-summary/:id" element={<ProductSummary />} />  */}
+          <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
+          <Route path="/product-summary/:id" element={<ProductSummary />} /> 
         </Routes>
         <Footer />
         <ProfileSection />

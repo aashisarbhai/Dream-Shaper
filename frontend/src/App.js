@@ -5,7 +5,6 @@ import ShopCategory from './pages/ShopCategory';
 import Home from './pages/Home';
 import WishList from './pages/WishList';
 import Cart from './components/Cart';
-// import LoginSignup from './pages/LoginSignup';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import About from './pages/About';

@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../Assets/logo.jpeg';
 import { Link } from 'react-router-dom';
-//import Sidebar from './Sidebar';
 import ProfileSection from './ProfileSection';
-//import ProductSection from './ProductSection';
+// import Sidebar from './Sidebar';
+// import ProductSection from './ProductSection';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Home");
-  //const [sidebarActive, setSidebarActive] = useState(false);
+  // const [sidebarActive, setSidebarActive] = useState(false);
   const [profileActive, setProfileActive] = useState(false);
-  //const [productActive, setProductActive] = useState(false);
+  // const [productActive, setProductActive] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   // const toggleSidebar = () => {
@@ -19,6 +20,10 @@ const Navbar = () => {
 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
+  };
+
+  const toggleSearch = () => {
+    setSearchVisible(!searchVisible);
   };
 
   const handleSearchChange = (event) => {
@@ -58,18 +63,27 @@ const Navbar = () => {
         <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
         </li>
+
+        <li onClick={() => { setMenu("Reviews") }}>
+          <Link to='/reviews' className={menu === "Reviews" ? "active" : ""}>Reviews</Link>
+        </li>
       </ul>
-      <form className="nav-search" onSubmit={handleSearchSubmit}>
+
+      <div className="nav-search-container">
+        <button id="search-icon" onClick={toggleSearch}>
+          <i className="fa-solid fa-search"></i>
+        </button>
         <input
           type="text"
+          id="search-bar"
+          className={searchVisible ? 'active' : ''}
           placeholder="Search..."
           value={searchTerm}
           onChange={handleSearchChange}
+          onBlur={() => setSearchVisible(false)} // Hide search bar when focus is lost
         />
-        <button type="submit">
-          <i className="fa fa-search"></i>
-        </button>
-      </form>
+      </div>
+    
       <div className="nav-login-cart">
         <div className="icons">
           <div 

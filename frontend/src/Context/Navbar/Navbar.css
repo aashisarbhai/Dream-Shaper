@@ -1,3 +1,5 @@
+/* Navbar.css */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -53,6 +55,7 @@
 .nav-login-cart {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-login-cart button {
@@ -81,36 +84,8 @@
   cursor: pointer;
 }
 
-.nav-search {
-  display: flex;
-  align-items: center;
-}
-
-.nav-search input {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 20px 0 0 20px;
-  font-size: 14px;
-  outline: none;
-  width: 200px;
-}
-
-.nav-search button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 20px 20px 0;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.nav-search button:hover {
-  background-color: #e0e0e0;
-}
-
-.nav-search i {
-  color: #555;
+.nav-search-container {
+  position: relative;
 }
 
 .nav-cart-count {
@@ -124,13 +99,49 @@
   right: 10px;
 }
 
+#search-icon {
+  background-color: maroon;
+  border: 1px solid maroon;
+  border-radius: 20px; 
+   padding: 8px 12px; 
+  cursor: pointer;
+   transition: background-color 0.3s ease; 
+  z-index: 10; 
+}
+
+#search-icon:hover {
+  background-color: maroon;
+}
+
+#search-bar {
+  padding: 8px 12px;
+  border: 1px solid maroon;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  width: 0; /* Initially hidden */
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px); /* Position to the left of the search icon */
+  transform: translateY(-50%);
+  transition: width 0.3s ease, opacity 0.3s ease;
+  z-index: 5; /* Ensure it is above other elements */
+}
+
+#search-bar.active {
+  width: 150px; /* Width when visible */
+  opacity: 1;
+  right: calc(100% + 10px); /* Keep position relative to the icon */
+}
+
 .profile-section {
   position: fixed;
   top: 0;
   right: -250px; 
   width: 250px;
   height: 100%;
-  background-color: #333333;
+  background-color: #333;
   color: white;
   transition: right 0.3s ease;
   z-index: 1000;
@@ -215,13 +226,15 @@
   z-index: 1000;
 }
 
-/* .product-section {
+/* Optional: Styles for product section, if used */
+/*
+.product-section {
   position: fixed;
   top: 0;
   right: -250px; 
   width: 250px;
   height: 100%;
-  background-color: #333333;
+  background-color: #333;
   color: white;
   transition: right 0.3s ease;
   z-index: 1000;
@@ -287,4 +300,5 @@
   position: absolute;
   top: 100%;
   z-index: 1000;
-} */
+}
+*/

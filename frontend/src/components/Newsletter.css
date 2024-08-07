@@ -1,54 +1,80 @@
-.newsletter {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .newsletter h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .newsletter p {
-    margin: 10px 0 20px;
-    color: #666;
-  }
-  
-  .newsletter div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .newsletter i {
-    font-size: 24px;
-    color: black;
-  }
-  
-  .newsletter input[type="email"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
-    font-size: 16px;
-  }
-  
-  .newsletter button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: maroon;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .newsletter button:hover {
-    background-color: #0056b3;
-  }
-  
+.newsletter-container {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.newsletter-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Increase width for more space */
+  margin: 0 auto;
+  gap: 20px; /* Space between elements */
+}
+
+.newsletter-content i {
+  font-size: 3em; /* Size of the icon */
+  color: #800000; /* Color of the icon */
+}
+
+.newsletter-text {
+  flex: 1; /* Take up remaining space */
+  text-align: left; /* Align text to the left */
+}
+
+.newsletter-content h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.newsletter-content p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+  flex: 1; /* Take up remaining space */
+}
+
+.newsletter-form input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  flex: 1;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #800000;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #5d0000;
+}
+
+.error-message {
+  color: #ff3f6c;
+  font-size: 0.9em;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 0.9em;
+}

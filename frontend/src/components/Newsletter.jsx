@@ -1,6 +1,6 @@
-// src/component/Newsletter.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Newsletter.css';
 
 function Newsletter() {
   const [email, setEmail] = useState('');
@@ -28,21 +28,32 @@ function Newsletter() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Subscribe to our Newsletter</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {message && <p style={{ color: 'green' }}>{message}</p>}
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleInputChange}
-          required
-        />
-        <button type="submit" className="btn btn-success mt-3">Subscribe</button>
-      </form>
+    <div className="newsletter-container">
+      <div className="newsletter-content">
+        <div className='img'>
+        <i className="fa-regular fa-envelope fa-3x"></i> 
+        </div>
+        <div className="update">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to get the latest updates and offers.</p>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="newsletter-form">
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+        {error && <p className="error-message">{error}</p>}
+        {message && <p className="success-message">{message}</p>}
+      </div>
     </div>
   );
 }

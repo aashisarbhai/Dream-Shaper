@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero';
 import Newsletter from '../components/Newsletter'
 import Qualities from '../components/Hero/Qualities';
 import Categories from '../components/Hero/Categories';
+import Reviews from '../pages/Reviews';
 
 const Home = () => {
   return(
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <Qualities/>
        <Categories/> 
+       <Reviews/>
       <Newsletter />
     </div>
   )

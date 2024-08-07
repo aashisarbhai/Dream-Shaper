@@ -2,6 +2,7 @@ import React from 'react'
 import Productbar from '../Context/Navbar/Productbar';
 import Hero from '../components/Hero/Hero';
 import Newsletter from '../components/Newsletter'
+import Qualities from '../components/Hero/Qualities';
 //import Categories from '../pages/Categories';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <div>
       <Productbar/>
       <Hero />
+      <Qualities/>
       {/* <Categories/> */}
       <Newsletter />
     </div>

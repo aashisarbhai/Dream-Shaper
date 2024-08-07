@@ -3,7 +3,7 @@ import Productbar from '../Context/Navbar/Productbar';
 import Hero from '../components/Hero/Hero';
 import Newsletter from '../components/Newsletter'
 import Qualities from '../components/Hero/Qualities';
-//import Categories from '../pages/Categories';
+import Categories from '../components/Hero/Categories';
 
 const Home = () => {
   return(
@@ -11,7 +11,7 @@ const Home = () => {
       <Productbar/>
       <Hero />
       <Qualities/>
-      {/* <Categories/> */}
+       <Categories/> 
       <Newsletter />
     </div>
   )

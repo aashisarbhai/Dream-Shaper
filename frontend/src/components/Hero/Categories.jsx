@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import polaroid from '../components/photo/polaroid.jpg';
 
 function Categories() {
   return (
@@ -8,7 +7,6 @@ function Categories() {
      
       <h1>Shop by Categories</h1>
       <ul>
-      <img src={polaroid} alt='../Components/photo/polaroid'/>
         <li>Personalized & Gifts
           <ul>
             <li>Custom Portraits</li>

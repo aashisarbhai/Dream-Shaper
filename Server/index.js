@@ -5,6 +5,8 @@ const Product = require('./config/products');
 const port = 3389;
 const app = express();
 const cors = require('cors');
+const CartItem = require('./config/CartItem')
+const Order = require('./config/Order');
 // const path = require('path');
 
 // // Serve static files from the React app
@@ -17,6 +19,64 @@ app.use(express.json());-
 app.use(cors({
   origin:"http://localhost:3000"
 }));
+
+// Place an order
+app.post('/order', async (req, res) => {
+  const { productId, phone, email, address } = req.body;
+
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    const order = new Order({
+      product: productId,
+      phone,
+      email,
+      address,
+      price: product.price,
+      name: product.name
+    });
+
+    const savedOrder = await order.save();
+    res.status(201).json(savedOrder);
+  } catch (err) {
+    console.error('Error placing order:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+// Fetch order summary by ID
+// app.get('/order/:id', async (req, res) => {
+//   try {
+//     const order = await Order.findById(req.params.id).populate('product');
+//     if (!order) {
+//       return res.status(404).json({ message: 'Order not found' });
+//     }
+//     res.json(order);
+//   } catch (err) {
+//     console.error('Error fetching order summary:', err);
+//     res.status(500).json({ message: err.message });
+//   }
+// });
+
+app.get('/order/:id', async (req, res) => {
+  console.log('Received request for order ID:', req.params.id);
+  try {
+    const order = await Order.findById(req.params.id).populate('product');
+    if (!order) {
+      console.log('Order not found');
+      return res.status(404).json({ message: 'Order not found' });
+    }
+    console.log('Order found:', order);
+    res.json(order);
+  } catch (err) {
+    console.error('Error fetching order summary:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 // Signup API
 app.post('/signup', async (req, res) => {
     try {
@@ -145,6 +205,16 @@ app.get('/products/Paintings', async (req, res) => {
     }
   });
 
+  //WallHanging
+  app.get('/products/WallHanging', async (req, res) => {
+    try {
+      const products = await Product.find({ category: 'WallHanging' });
+      res.json(products);
+    } catch (err) {
+      res.status(500).send('Server error: ' + err.message);
+    }
+  });
+
 
   // Fetch a single product by ID
   app.get('/product/:id', async (req, res) => {
@@ -155,10 +225,12 @@ app.get('/products/Paintings', async (req, res) => {
       }
       res.json(product);
     } catch (err) {
+      console.error('Error fetching product by ID:', err); // Log the error on the server-side
       res.status(500).json({ message: err.message });
     }
   });
 
+  
 //api for email address
 
 const Subscriber = require('./config/Subscriber');
@@ -194,6 +266,70 @@ app.post('/productsadd', async (req, res) => {
     res.status(400).send('Error adding product: ' + err.message);
   }
 });
+app.post('/cart', async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    let cartItem = await CartItem.findOne({ userId, productId });
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cartItem = new CartItem({ userId, productId, quantity });
+    }
+
+    await cartItem.save();
+    res.status(201).json(cartItem);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+// Add item to cart
+app.post('/cart', async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    let cartItem = await CartItem.findOne({ userId, productId });
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cartItem = new CartItem({ userId, productId, quantity });
+    }
+
+    await cartItem.save();
+    res.status(201).json(cartItem);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Get cart items for a user
+app.get('/cart/:userId', async (req, res) => {
+  try {
+    const cartItems = await CartItem.find({ userId: req.params.userId }).populate('productId');
+    res.json(cartItems);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Remove item from cart
+app.delete('/cart/:id', async (req, res) => {
+  try {
+    await CartItem.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Item removed from cart' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 
 // Make the server listen to the specified port
 app.listen(port, () => {

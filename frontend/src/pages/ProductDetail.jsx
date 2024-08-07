@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     console.log('Product ID from URL params:', id); // Log the id to verify it's correct
 
@@ -24,6 +24,10 @@ const ProductDetail = () => {
 
     fetchProduct();
   }, [id]);
+  
+  const handleBuyNow = () => {
+    navigate(`/placing-order/${id}`);
+  };
 
   if (!product) {
     return <div>Unable to load product</div>;
@@ -35,6 +39,8 @@ const ProductDetail = () => {
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       {/* Add more product details as needed */}
+      <button onClick={handleBuyNow}>Buy Now</button>
+
     </div>
   );
 };

@@ -6,6 +6,7 @@ const port = 3389;
 const app = express();
 const cors = require('cors');
 const CartItem = require('./config/CartItem')
+const Order = require('./config/Order');
 // const path = require('path');
 
 // // Serve static files from the React app
@@ -18,6 +19,64 @@ app.use(express.json());-
 app.use(cors({
   origin:"http://localhost:3000"
 }));
+
+// Place an order
+app.post('/order', async (req, res) => {
+  const { productId, phone, email, address } = req.body;
+
+  try {
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    const order = new Order({
+      product: productId,
+      phone,
+      email,
+      address,
+      price: product.price,
+      name: product.name
+    });
+
+    const savedOrder = await order.save();
+    res.status(201).json(savedOrder);
+  } catch (err) {
+    console.error('Error placing order:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+// Fetch order summary by ID
+// app.get('/order/:id', async (req, res) => {
+//   try {
+//     const order = await Order.findById(req.params.id).populate('product');
+//     if (!order) {
+//       return res.status(404).json({ message: 'Order not found' });
+//     }
+//     res.json(order);
+//   } catch (err) {
+//     console.error('Error fetching order summary:', err);
+//     res.status(500).json({ message: err.message });
+//   }
+// });
+
+app.get('/order/:id', async (req, res) => {
+  console.log('Received request for order ID:', req.params.id);
+  try {
+    const order = await Order.findById(req.params.id).populate('product');
+    if (!order) {
+      console.log('Order not found');
+      return res.status(404).json({ message: 'Order not found' });
+    }
+    console.log('Order found:', order);
+    res.json(order);
+  } catch (err) {
+    console.error('Error fetching order summary:', err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 // Signup API
 app.post('/signup', async (req, res) => {
     try {

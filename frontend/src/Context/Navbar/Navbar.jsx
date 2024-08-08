@@ -65,7 +65,7 @@ const Navbar = () => {
         </li>
 
         <li onClick={() => { setMenu("Reviews") }}>
-          <Link to='/reviews' className={menu === "Reviews" ? "active" : ""}>Reviews</Link>
+          <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}>Reviews</Link>
         </li>
       </ul>
 

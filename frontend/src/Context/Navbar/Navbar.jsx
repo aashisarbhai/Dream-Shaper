@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from '../../Assets/logo.jpeg';
+import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
 // import Sidebar from './Sidebar';
@@ -69,7 +69,12 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="nav-search-container">
+     
+    
+      <div className="nav-login-cart">
+        <div className="icons">
+
+        <div className="nav-search-container">
         <button id="search-icon" onClick={toggleSearch}>
           <i className="fa-solid fa-search"></i>
         </button>
@@ -83,9 +88,7 @@ const Navbar = () => {
           onBlur={() => setSearchVisible(false)} // Hide search bar when focus is lost
         />
       </div>
-    
-      <div className="nav-login-cart">
-        <div className="icons">
+      
           <div 
             className="profile-icon"
             onMouseEnter={() => setProfileActive(true)}
@@ -97,7 +100,7 @@ const Navbar = () => {
           <i className="fa-regular fa-heart"></i>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
-        <div className="nav-cart-count">0</div>
+        {/* <div className="nav-cart-count">0</div> */}
       </div>
       {/* <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} /> */}
     </div>

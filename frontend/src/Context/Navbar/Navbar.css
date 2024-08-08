@@ -1,14 +1,12 @@
-/* Navbar.css */
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: maroon;
+  background-color: #FFDFD6;
   padding: 10px 20px;
   position: relative;
   z-index: 1001;
-  color: white;
+  color: #694F8E;
   width: 96.8%;
 }
 
@@ -39,17 +37,17 @@
 }
 
 .nav-menu a {
-  color: white;
+  color: #694F8E;
   text-decoration: none;
   font-size: 1em;
 }
 
 .nav-menu a.active {
-  border-bottom: 2px solid maroon;
+  border-bottom: 2px solid #B692C2;
 }
 
 .nav-menu a:hover {
-  color: #007bff;
+  color: #B692C2;
 }
 
 .nav-login-cart {
@@ -88,20 +86,21 @@
   position: relative;
 }
 
-.nav-cart-count {
+/* .nav-cart-count {
   background-color: red;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 0.8em;
   color: white;
   position: absolute;
-  top: 10px;
-  right: 10px;
-}
+  top: 0px;
+  right: 5px;
+} */
 
 #search-icon {
-  background-color: maroon;
-  border: 1px solid maroon;
+  background-color: #FFDFD6;
+  color:#694F8E;
+  border: 1px solid #FFDFD6;
   border-radius: 20px; 
    padding: 8px 12px; 
   cursor: pointer;
@@ -110,7 +109,7 @@
 }
 
 #search-icon:hover {
-  background-color: maroon;
+  background-color: #FFDFD6;
 }
 
 #search-bar {

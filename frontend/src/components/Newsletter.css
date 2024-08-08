@@ -1,5 +1,5 @@
 .newsletter-container {
-  background-color: #f9f9f9;
+  background-color: #B692C2;
   padding: 20px 20px;
   text-align: center;
 }
@@ -8,18 +8,17 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Center horizontally */
-  background-color: #ffffff;
+  background-color: #B692C2;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 1200px; /* Increase width for more space */
   margin: 0 auto;
   gap: 150px; /* Space between elements */
 }
 
 .newsletter-content i {
-  font-size: 3em; /* Size of the icon */
-  color: #800000; /* Color of the icon */
+  font-size: 5em; /* Size of the icon */
+  color: white; /* Color of the icon */
 }
 
 .newsletter-text {
@@ -29,13 +28,13 @@
 
 .newsletter-content h2 {
   font-size: 2em;
-  color: #333;
+  color: white;
   margin-bottom: 10px;
 }
 
 .newsletter-content p {
   font-size: 1em;
-  color: #666;
+  color: white;
   margin-bottom: 20px;
 }
 
@@ -48,7 +47,7 @@
 
 .newsletter-form input {
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #B692C2;
   border-radius: 5px;
   font-size: 1em;
   flex: 1;
@@ -58,7 +57,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #800000;
+  background-color: #694F8E;
   color: white;
   font-size: 1em;
   cursor: pointer;

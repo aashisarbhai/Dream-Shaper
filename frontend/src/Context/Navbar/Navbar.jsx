@@ -3,7 +3,6 @@ import './Navbar.css';
 import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
-import Reviews from '../../pages/Reviews';
 // import Sidebar from './Sidebar';
 // import ProductSection from './ProductSection';
 
@@ -66,7 +65,7 @@ const Navbar = () => {
         </li>
 
         <li onClick={() => { setMenu("Reviews") }}>
-          <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}>Reviews</Link>
+          <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}> Reviews</Link>
         </li>
       </ul>
 

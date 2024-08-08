@@ -9,8 +9,6 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import About from './pages/About';
 import Footer from './Context/Footer/Footer';
-import ProfileSection from './Context/Navbar/ProfileSection';
-import ProductSection from './Context/Navbar/ProductSection';
 import Polaroids from './pages/Polaroids';
 import Portraits from './pages/Portraits';
 import ResinArt from './pages/ResinArt';
@@ -31,13 +29,11 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      
         <Navbar />
-        
-        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/item" element={<ShopCategory category="Item" />} />
           <Route path="/notification" element={<ShopCategory category="Notification" />} />
           <Route path="/wishlist" element={<WishList />} />
@@ -54,14 +50,11 @@ function App() {
           <Route path="/pages/Paintings" element={<Paintings />} />
           <Route path="/pages/Purse" element={<Purse />} />
           <Route path="/pages/WallHanging" element={<WallHanging />} />
-          <Route path="/product/:id" element={<ProductDetail/>} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
           <Route path="/product-summary/:id" element={<ProductSummary />} />
-          <Route path="/pages/Reviews" element={<Reviews />} />
         </Routes>
         <Footer />
-        <ProfileSection />
-        <ProductSection/>
       </BrowserRouter>
     </div>
   );

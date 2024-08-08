@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import photo4 from '../components/photo/photo4.png';
 import photo5 from '../components/photo/photo5.png';
 import photo6 from '../components/photo/photo6.png';
-import './About1.css'; // You can create CSS for styling
+import './About1.css'; 
 
 const About = () => {
   return (
     <div className="founder-page">
       <div className="image-section">
-        {/* Placeholder for Imagesdnfj */}
         <img src={photo5}  alt="Founder" className="image"/>
         <img src={photo4}  alt="Founder" className="image"/>
         <img src={photo5}  alt="Founder" className="image"/>

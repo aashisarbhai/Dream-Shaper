@@ -24,7 +24,7 @@ import WallHanging from './pages/WallHanging';
 import ProductDetail from './pages/ProductDetail';
 import PlacingOrder from './pages/PlacingOrder'; 
 import ProductSummary from './pages/ProductSummary'; 
-
+import Reviews from './pages/Reviews';
 import './index.css';
 
 function App() {
@@ -56,7 +56,8 @@ function App() {
           <Route path="/pages/WallHanging" element={<WallHanging />} />
           <Route path="/product/:id" element={<ProductDetail/>} />
           <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
-          <Route path="/product-summary/:id" element={<ProductSummary />} /> 
+          <Route path="/product-summary/:id" element={<ProductSummary />} />
+          <Route path="/pages/Reviews" element={<Reviews />} />
         </Routes>
         <Footer />
         <ProfileSection />

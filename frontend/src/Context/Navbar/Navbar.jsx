@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
+import Reviews from '../../pages/Reviews';
 // import Sidebar from './Sidebar';
 // import ProductSection from './ProductSection';
 
@@ -69,26 +70,23 @@ const Navbar = () => {
         </li>
       </ul>
 
-     
-    
       <div className="nav-login-cart">
         <div className="icons">
+          <div className="nav-search-container">
+            <button id="search-icon" onClick={toggleSearch}>
+              <i className="fa-solid fa-search"></i>
+            </button>
+            <input
+              type="text"
+              id="search-bar"
+              className={searchVisible ? 'active' : ''}
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onBlur={() => setSearchVisible(false)} // Hide search bar when focus is lost
+            />
+          </div>
 
-        <div className="nav-search-container">
-        <button id="search-icon" onClick={toggleSearch}>
-          <i className="fa-solid fa-search"></i>
-        </button>
-        <input
-          type="text"
-          id="search-bar"
-          className={searchVisible ? 'active' : ''}
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          onBlur={() => setSearchVisible(false)} // Hide search bar when focus is lost
-        />
-      </div>
-      
           <div 
             className="profile-icon"
             onMouseEnter={() => setProfileActive(true)}

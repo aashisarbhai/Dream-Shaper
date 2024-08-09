@@ -1,5 +1,5 @@
 .newsletter-container {
-  background-color: #B692C2;
+  background-image:linear-gradient(to bottom, #E3A5C7 0%,#B692C2 100%);
   padding: 20px 20px;
   text-align: center;
 }
@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Center horizontally */
-  background-color: #B692C2;
+  background-image:linear-gradient(to bottom, #E3A5C7 0%,#B692C2 100%);
   border-radius: 8px;
   padding: 20px;
   max-width: 1200px; /* Increase width for more space */

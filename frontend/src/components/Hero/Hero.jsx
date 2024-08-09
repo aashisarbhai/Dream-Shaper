@@ -1,13 +1,13 @@
 import React from 'react'
 import './Hero.css'
- import hero1 from '../../Assets/hero1.jpg'
+ import hero2 from '../../components/photo/hero2.png'
 
 const Hero = () => {
   return (
     <div className='hero'>
         <div>
           <div className="hand-hand-icon">
-              <img src={hero1} alt="" ></img>
+              <img src={hero2} alt="" ></img>
           </div>
 </div>
 </div>   

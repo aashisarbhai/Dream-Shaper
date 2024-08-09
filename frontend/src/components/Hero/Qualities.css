@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #E3A5C7;
   }
   
   .quality-item {
@@ -16,7 +16,7 @@
   
   .quality-item i {
     font-size: 2.5rem;
-    color: maroon;
+    color: #694F8e;
     margin-bottom: 10px;
   }
   

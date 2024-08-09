@@ -75,6 +75,7 @@ const Navbar = () => {
             <button id="search-icon" onClick={toggleSearch}>
               <i className="fa-solid fa-search"></i>
             </button>
+            
             <input
               type="text"
               id="search-bar"

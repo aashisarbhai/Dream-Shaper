@@ -17,7 +17,6 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h2>Contact Us</h2>
-          <p>Phone: +91 123456789</p>
           <p>Email: dreamshaper.ds@gmail.com</p>
         </div>
         <div className="footer-section">

@@ -1,15 +1,10 @@
 .hero-container {
-    width: 80%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 176vh;
+    height: 90vh;
   }
   
   .hero-container img {
-    width: 100%;
-    height: auto;
+    width: 130%;
+    height: 90vh;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }

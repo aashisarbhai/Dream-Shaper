@@ -1,5 +1,7 @@
 import React from 'react'
 import hero2 from '../photo/hero2.png'
+import './Hero.css'
+
 function Hero() {
   return (
     <div>

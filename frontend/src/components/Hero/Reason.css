@@ -1,0 +1,10 @@
+.container{
+    width:80vh;
+    height: 80vh;
+    padding: 10vh;
+}
+
+.container img{
+    width: 210vh;
+    height: 80vh;
+}

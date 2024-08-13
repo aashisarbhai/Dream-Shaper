@@ -96,7 +96,7 @@ const Navbar = () => {
             {profileActive && <ProfileSection isActive={profileActive} onClose={() => setProfileActive(false)} />}
           </div>
           <i className="fa-regular fa-heart"></i>
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-bag-shopping"></i>
         </div>
         {/* <div className="nav-cart-count">0</div> */}
       </div>

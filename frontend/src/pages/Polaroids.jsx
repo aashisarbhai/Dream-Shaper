@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard.jsx';
+import './Polaroids.css'; 
 
 function Polaroids() {
   const [products, setProducts] = useState([]);
@@ -20,10 +21,10 @@ function Polaroids() {
   }, []);
 
   return (
-    <div>
-      <h2>Polaroids</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div className="d-flex flex-wrap">
+    <div className="polaroids-container">
+      <h2 className="polaroids-title">Polaroids</h2>
+      {error && <p className="error-message">{error}</p>}
+      <div className="products-grid">
         {products.map(product => (
           <ProductCard key={product._id} product={product} />
         ))}
@@ -32,6 +33,4 @@ function Polaroids() {
   );
 }
 
-
-export default Polaroids
-
+export default Polaroids;

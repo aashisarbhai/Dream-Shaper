@@ -45,10 +45,10 @@ const Navbar = () => {
         <h2>Dream Shaper</h2>
       </div>
       
-      <ul className="nav-menu">
+      {/* <ul className="nav-menu">
         <li onClick={() => { setMenu("Home") }}>
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
-        </li>
+        </li> */}
         {/* <li 
           className="product-menu-item"
           onMouseEnter={() => setProductActive(true)}
@@ -60,14 +60,14 @@ const Navbar = () => {
           </Link>
           {productActive && <ProductSection isActive={productActive} onClose={() => setProductActive(false)} />}
         </li> */}
-        <li onClick={() => { setMenu("About") }}>
+        {/* <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
         </li>
 
         <li onClick={() => { setMenu("Reviews") }}>
           <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}> Reviews</Link>
         </li>
-      </ul>
+      </ul> */}
 
       <div className="nav-login-cart">
         <div className="icons">

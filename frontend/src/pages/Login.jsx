@@ -36,31 +36,37 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Login Page</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-        <button type="submit" className="btn btn-success mt-3">Login</button>
-        <button type="button" className="btn btn-primary mt-3" onClick={() => window.location.href = '/Signup'}>Signup</button>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2>Login</h2>
+        {error && <p className="error-message">{error}</p>}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-success">Login</button>
+        <button type="button" className="btn btn-primary" onClick={() => window.location.href = '/Signup'}>Signup</button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Login;

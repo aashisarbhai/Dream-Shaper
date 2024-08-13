@@ -1,13 +1,13 @@
 .hero-container {
-    width: 80vw; 
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 0;
-    overflow: hidden; 
+    overflow: hidden;
+    position: relative;
 }
 
 .slick-slider {
-    width: 100vw;
-    height: 100vh; 
+    width: auto;
+    height: auto;
 }
 
 .slick-slide {
@@ -18,27 +18,31 @@
 
 .slick-slide img {
     width: 100%;
-    height: auto; 
+    height: 100%;
     display: block;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .slick-prev, .slick-next {
-    z-index: 1;
+    z-index: 20;  /* Increased z-index to ensure arrows are above the image */
     width: 40px;
     height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .slick-prev {
-    left: 10px;
+    left: 20px;  /* Moved slightly inward for visibility */
 }
 
 .slick-next {
-    right: 10px;
+    right: 20px;  /* Moved slightly inward for visibility */
 }
 
 .slick-prev:before, .slick-next:before {
     font-size: 40px;
     color: black;
     opacity: 0.75;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);  /* Added text shadow for better contrast */
 }

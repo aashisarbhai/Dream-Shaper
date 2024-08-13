@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1001;
   color: #694F8E;
-  width: 96.8%;
+  width: 96.85%;
 }
 
 .nav-logo {
@@ -21,8 +21,9 @@
 }
 
 .nav-logo h2 {
+  font-family: "Playwrite PE", cursive;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .nav-menu {

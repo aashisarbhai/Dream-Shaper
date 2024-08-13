@@ -42,7 +42,7 @@ const Navbar = () => {
       
       <div className="nav-logo">
         <img src={logo} alt="logo" />
-        <h2>Dream Shaper</h2>
+        <h2>dream shaper</h2>
       </div>
       
       {/* <ul className="nav-menu">

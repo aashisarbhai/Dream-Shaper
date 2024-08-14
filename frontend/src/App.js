@@ -24,10 +24,12 @@ import PlacingOrder from './pages/PlacingOrder';
 import ProductSummary from './pages/ProductSummary'; 
 import Reviews from './pages/Reviews';
 import './index.css';
+import CartContext, { CartProvider } from './Context/CartContext';
 
 function App() {
   return (
     <div>
+      <CartProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -56,6 +58,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

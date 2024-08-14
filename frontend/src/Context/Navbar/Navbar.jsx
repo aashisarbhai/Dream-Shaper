@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
+import Cart from '../../pages/Cart';
 // import Sidebar from './Sidebar';
 // import ProductSection from './ProductSection';
 
@@ -95,8 +96,19 @@ const Navbar = () => {
             <i className="fa-regular fa-user"></i>
             {profileActive && <ProfileSection isActive={profileActive} onClose={() => setProfileActive(false)} />}
           </div>
-          <i className="fa-regular fa-heart"></i>
+
+          <div className="wishlist">
+            <Link to='wishlist'>
+            <i className="fa-regular fa-heart"></i>
+            </Link>
+          </div>
+          
+          <div className="cart">
+            <Link to='cart'>
           <i className="fa-solid fa-bag-shopping"></i>
+          </Link>
+          </div>
+         
         </div>
         {/* <div className="nav-cart-count">0</div> */}
       </div>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
+import login from '../components/photo/login.png'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -37,8 +38,10 @@ function Login() {
 
   return (
     <div className="login-container">
+      <img src={login} alt="" />
       <form onSubmit={handleSubmit} className="login-form">
-        <h2>Login</h2>
+        <h2>Sign in</h2>
+        <p>Don't have an account? <Link to="/Signup">Sign up</Link></p>
         {error && <p className="error-message">{error}</p>}
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -61,9 +64,10 @@ function Login() {
             onChange={handleInputChange}
             required
           />
+          <p>forgot password?</p>
         </div>
-        <button type="submit" className="btn btn-success">Login</button>
-        <button type="button" className="btn btn-primary" onClick={() => window.location.href = '/Signup'}>Signup</button>
+        <button type="submit" className="btn btn-success">Sign in</button>
+        <p>or sign in using</p>
       </form>
     </div>
   );

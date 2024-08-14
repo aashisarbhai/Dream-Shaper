@@ -24,6 +24,7 @@ import PlacingOrder from './pages/PlacingOrder';
 import ProductSummary from './pages/ProductSummary'; 
 import Reviews from './pages/Reviews';
 import './index.css';
+import Help from './pages/Help';
 
 function App() {
   return (
@@ -53,7 +54,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
           <Route path="/product-summary/:id" element={<ProductSummary />} />
-        </Routes>
+          <Route path="/help" element={<Help />} />
+          </Routes>
         <Footer />
       </BrowserRouter>
     </div>

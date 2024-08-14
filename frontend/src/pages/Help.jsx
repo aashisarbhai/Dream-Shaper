@@ -25,7 +25,8 @@ function Help() {
       <section className="contact-support">
         <h2>Still Need Help?</h2>
         <p>If you couldn't find the answer to your question, please don't hesitate to contact us directly.</p>
-        <button>Contact Support</button>
+
+        <a href="https://wa.me/7042445757" target='_blank' rel="noopener noreferrer"><button>Chat on Whatsapp</button></a>
       </section>
     </div>
   );

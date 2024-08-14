@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
-import review1 from '../components/photo/review1.jpg';
-import review2 from '../components/photo/review2.jpg';
-import review3 from '../components/photo/review3.jpg';
+import review1 from '../components/photo/review1.png';
+import review2 from '../components/photo/review2.png';
+import review3 from '../components/photo/review3.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../pages/Review.css'
@@ -10,7 +10,6 @@ import '../pages/Review.css'
 function Reviews() {
   // Slider settings
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -21,7 +20,7 @@ function Reviews() {
   };
 
   return (
-    <div>
+      <div className="review-container">
       <h1>A Word From Happy Customers</h1>
       <Slider {...settings}>
         <div>

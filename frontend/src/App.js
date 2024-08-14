@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShopCategory from './pages/ShopCategory';
 import Home from './pages/Home';
 import WishList from './pages/WishList';
-import Cart from './components/Cart';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import About from './pages/About';
@@ -27,6 +26,8 @@ import './index.css';
 import CartContext, { CartProvider } from './Context/CartContext';
 
 function App() {
+  const userId = "12345";
+
   return (
     <div>
       <CartProvider>
@@ -39,7 +40,7 @@ function App() {
           <Route path="/item" element={<ShopCategory category="Item" />} />
           <Route path="/notification" element={<ShopCategory category="Notification" />} />
           <Route path="/wishlist" element={<WishList />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart userId={userId} />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/pages/polaroids" element={<Polaroids />} />
@@ -55,7 +56,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
           <Route path="/product-summary/:id" element={<ProductSummary />} />
-        </Routes>
+          <Route path="/help" element={<Help />} />
+          <Route path="/cart" element={<Cart />} />
+          </Routes>
         <Footer />
       </BrowserRouter>
       </CartProvider>

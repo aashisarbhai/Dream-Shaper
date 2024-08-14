@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
+import login from '../components/photo/login.png'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -36,31 +37,40 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Login Page</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-        <button type="submit" className="btn btn-success mt-3">Login</button>
-        <button type="button" className="btn btn-primary mt-3" onClick={() => window.location.href = '/Signup'}>Signup</button>
+    <div className="login-container">
+      <img src={login} alt="" />
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2>Sign in</h2>
+        <p>Don't have an account? <Link to="/Signup">Sign up</Link></p>
+        {error && <p className="error-message">{error}</p>}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+          <p>forgot password?</p>
+        </div>
+        <button type="submit" className="btn btn-success">Sign in</button>
+        <p>or sign in using</p>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Login;

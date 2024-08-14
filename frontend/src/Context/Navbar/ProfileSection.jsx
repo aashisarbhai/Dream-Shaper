@@ -6,7 +6,7 @@ const ProfileSection = ({ isActive, onClose }) => {
   if (!isActive) return null;
 
   const menuItems = [
-    { name: 'My Orders', path: '/coupons' },
+    { name: 'My Orders', path: '/cart' },
     { name: 'Contact Us', path: '/about' }, 
     { name: 'Notifications', path: '/Notification'},
     { name: 'Offers', path: '/offers', isNew: true },

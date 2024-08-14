@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   gap: 10px; /* Space between input and button */
-  flex: 1; /* Take up remaining space */
+  flex: 1; 
 }
 
 .newsletter-form input {

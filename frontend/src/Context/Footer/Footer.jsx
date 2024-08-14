@@ -9,7 +9,8 @@ const Footer = () => {
         <div className="footer-section">
           <h2>Quick Links</h2>
           <ul>
-            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to=" ">Home</Link></li>
+            <li><Link to="/productlist">Shop</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/help">Help Me</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>

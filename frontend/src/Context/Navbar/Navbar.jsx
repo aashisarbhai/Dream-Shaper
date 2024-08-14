@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
+import Cart from '../../pages/Cart';
 // import Sidebar from './Sidebar';
 // import ProductSection from './ProductSection';
 
@@ -42,13 +43,13 @@ const Navbar = () => {
       
       <div className="nav-logo">
         <img src={logo} alt="logo" />
-        <h2>Dream Shaper</h2>
+        <h2>dream shaper</h2>
       </div>
       
-      <ul className="nav-menu">
+      {/* <ul className="nav-menu">
         <li onClick={() => { setMenu("Home") }}>
           <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
-        </li>
+        </li> */}
         {/* <li 
           className="product-menu-item"
           onMouseEnter={() => setProductActive(true)}
@@ -60,14 +61,14 @@ const Navbar = () => {
           </Link>
           {productActive && <ProductSection isActive={productActive} onClose={() => setProductActive(false)} />}
         </li> */}
-        <li onClick={() => { setMenu("About") }}>
+        {/* <li onClick={() => { setMenu("About") }}>
           <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
         </li>
 
         <li onClick={() => { setMenu("Reviews") }}>
           <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}> Reviews</Link>
         </li>
-      </ul>
+      </ul> */}
 
       <div className="nav-login-cart">
         <div className="icons">
@@ -95,8 +96,19 @@ const Navbar = () => {
             <i className="fa-regular fa-user"></i>
             {profileActive && <ProfileSection isActive={profileActive} onClose={() => setProfileActive(false)} />}
           </div>
-          <i className="fa-regular fa-heart"></i>
-          <i className="fa-solid fa-cart-shopping"></i>
+
+          <div className="wishlist">
+            <Link to='wishlist'>
+            <i className="fa-regular fa-heart"></i>
+            </Link>
+          </div>
+          
+          <div className="cart">
+            <Link to='cart'>
+          <i className="fa-solid fa-bag-shopping"></i>
+          </Link>
+          </div>
+         
         </div>
         {/* <div className="nav-cart-count">0</div> */}
       </div>

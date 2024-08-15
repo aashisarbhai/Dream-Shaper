@@ -7,6 +7,14 @@
   background-image: linear-gradient(to bottom, #ffc7e2 0% , #E3A5C7 100%); 
 }
 
+/* Productbar.css */
+@media (max-width: 768px) {
+  .bar {
+    display: none; /* Hide the Productbar in mobile view */
+  }
+}
+
+
 .product {
   text-align: center; 
 }
@@ -32,3 +40,37 @@
 .product a:hover {
   text-decoration: none; 
 }
+
+
+/* Productbar.css */
+.productbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #ffc7e2 0% , #E3A5C7 100%);
+}
+
+@media (max-width: 768px) {
+  .productbar {
+    flex-direction: column;
+    background-image: none;
+    padding: 10px;
+  }
+
+  .product {
+    margin-bottom: 15px;
+  }
+
+  .product img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product p {
+    font-size: 14px;
+  }
+}
+
+/* ... (rest of your existing styles) */

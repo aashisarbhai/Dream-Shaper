@@ -12,75 +12,75 @@ import resin from '../../Assets/resin.png';
 import wallhanging from '../../Assets/wallhanging.png';
 import { Link } from 'react-router-dom';
 
-const Productbar = () => {
+  const Productbar = ({ hideImages }) => {
   return (
     <div className="bar">
       <div className="product">
         <Link to='../pages/Portraits'>
-        <img src={familyPicture} alt="family portrait" /> 
+        {!hideImages && <img src={familyPicture} alt="family portrait" />} 
         <p>Portrait</p>
         </Link>
       </div>
       
       <div className="product">
       <Link to='../pages/ResinArt'>
-        <img src={resin} alt="resin" />
+      {!hideImages &&<img src={resin} alt="resin" />}
         <p>Resin Art</p>
         </Link>
       </div>
       
       <div className="product">
         <Link to='../pages/Bookmark'>
-        <img src={bookmark} alt="bookmark" />
+        {!hideImages &&<img src={bookmark} alt="bookmark" />}
         <p>Bookmark</p>
         </Link>
         </div>
 
       <div className="product">
         <Link to='../pages/Keychains'>
-        <img src={keychain} alt="keychain" />
+        {!hideImages &&<img src={keychain} alt="keychain" />}
         <p>Keychain</p>
         </Link>
         </div>
 
       <div className="product">
         <Link to='../pages/Polaroids'>
-        <img src={polaroid} alt="polaroid" />
+        {!hideImages &&<img src={polaroid} alt="polaroid" />}
         <p>Polaroid</p>
         </Link>
        </div>
 
       <div className="product">
         <Link to='../pages/LippanArt'>
-        <img src={mandala} alt="mandala" />
+        {!hideImages &&<img src={mandala} alt="mandala" />}
         <p>Lippan Art</p>
         </Link>
       </div>
       
       <div className="product">
         <Link to='../pages/FridgeMagnet'>
-        <img src={fridge} alt="fridge" />
+        {!hideImages &&<img src={fridge} alt="fridge" />}
         <p>Fridge Magnets</p>
         </Link>
       </div>
       
       <div className="product">
         <Link to='../pages/Painting'>
-        <img src={paint} alt="paint" />
+        {!hideImages &&<img src={paint} alt="paint" />}
         <p>Paintings</p>
         </Link>
       </div>
 
       <div className="product">
         <Link to='../pages/Purse'>
-        <img src={bag} alt="bag" />
+        {!hideImages &&<img src={bag} alt="bag" />}
         <p>Purse</p>
         </Link>
       </div>
 
       <div className="product">
         <Link to='../pages/WallHanging'>
-        <img src={wallhanging} alt="wallhanging" />
+        {!hideImages &&<img src={wallhanging} alt="wallhanging" />}
         <p>Wall Hanging</p>
         </Link>
       </div>

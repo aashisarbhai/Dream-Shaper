@@ -1,82 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../../components/photo/logo.jpg';
 import { Link } from 'react-router-dom';
 import ProfileSection from './ProfileSection';
-import Cart from '../../pages/Cart';
-// import Sidebar from './Sidebar';
-// import ProductSection from './ProductSection';
+import Sidebar from './Sidebar';
+import Productbar from './Productbar';
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("Home");
-  // const [sidebarActive, setSidebarActive] = useState(false);
+  const [sidebarActive, setSidebarActive] = useState(false);
   const [profileActive, setProfileActive] = useState(false);
-  // const [productActive, setProductActive] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // const toggleSidebar = () => {
-  //   setSidebarActive(!sidebarActive);
-  // };
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const toggleProfile = () => {
-    setProfileActive(!profileActive);
-  };
+  const toggleSidebar = () => setSidebarActive(!sidebarActive);
+  const toggleProfile = () => setProfileActive(!profileActive);
+  const toggleSearch = () => setSearchVisible(!searchVisible);
 
-  const toggleSearch = () => {
-    setSearchVisible(!searchVisible);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const handleSearchChange = (event) => setSearchTerm(event.target.value);
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Implement the search functionality here
     console.log('Search Term:', searchTerm);
+    // Implement search functionality here
   };
 
   return (
-    <div className='navbar'>
-      {/* <i className="fa-solid fa-bars" onClick={toggleSidebar}></i> */}
+    <nav className='navbar'>
+      {isMobile && <i className="fa-solid fa-bars" onClick={toggleSidebar}></i>}
       
       <div className="nav-logo">
-        <img src={logo} alt="logo" />
-        <h2>dream shaper</h2>
+        <img src={logo} alt="Dream Shaper Logo" />
+        <h2>Dream Shaper</h2>
       </div>
       
-      {/* <ul className="nav-menu">
-        <li onClick={() => { setMenu("Home") }}>
-          <Link to='/' className={menu === "Home" ? "active" : ""}>Home</Link>
-        </li> */}
-        {/* <li 
-          className="product-menu-item"
-          onMouseEnter={() => setProductActive(true)}
-          onMouseLeave={() => setProductActive(false)}
-          onClick={() => { setMenu("Item") }}
-        >
-          <Link to='/item' className={menu === "Item" ? "active" : ""}>
-            Products
-          </Link>
-          {productActive && <ProductSection isActive={productActive} onClose={() => setProductActive(false)} />}
-        </li> */}
-        {/* <li onClick={() => { setMenu("About") }}>
-          <Link to='/about' className={menu === "About" ? "active" : ""}>About</Link>
-        </li>
-
-        <li onClick={() => { setMenu("Reviews") }}>
-          <Link to='/Reviews' className={menu === "Reviews" ? "active" : ""}> Reviews</Link>
-        </li>
-      </ul> */}
-
       <div className="nav-login-cart">
         <div className="icons">
           <div className="nav-search-container">
             <button id="search-icon" onClick={toggleSearch}>
               <i className="fa-solid fa-search"></i>
             </button>
-            
             <input
               type="text"
               id="search-bar"
@@ -84,36 +53,35 @@ const Navbar = () => {
               placeholder="Search..."
               value={searchTerm}
               onChange={handleSearchChange}
-              onBlur={() => setSearchVisible(false)} // Hide search bar when focus is lost
+              onBlur={() => setSearchVisible(false)}
             />
           </div>
 
           <div 
             className="profile-icon"
-            onMouseEnter={() => setProfileActive(true)}
-            onMouseLeave={() => setProfileActive(false)}
+            onMouseEnter={toggleProfile}
+            onMouseLeave={toggleProfile}
           >
             <i className="fa-regular fa-user"></i>
-            {profileActive && <ProfileSection isActive={profileActive} onClose={() => setProfileActive(false)} />}
+            {profileActive && <ProfileSection isActive={profileActive} onClose={toggleProfile} />}
           </div>
 
-          <div className="wishlist">
-            <Link to='wishlist'>
+          <Link to='wishlist' className="wishlist">
             <i className="fa-regular fa-heart"></i>
-            </Link>
-          </div>
-          
-          <div className="cart">
-            <Link to='cart'>
-          <i className="fa-solid fa-bag-shopping"></i>
           </Link>
-          </div>
-         
+          
+          <Link to='cart' className="cart">
+            <i className="fa-solid fa-bag-shopping"></i>
+          </Link>
+
+          {isMobile && (
+            <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar}>
+              <Productbar />
+            </Sidebar>
+          )}
         </div>
-        {/* <div className="nav-cart-count">0</div> */}
       </div>
-      {/* <Sidebar isActive={sidebarActive} toggleSidebar={toggleSidebar} /> */}
-    </div>
+    </nav>
   );
 };
 

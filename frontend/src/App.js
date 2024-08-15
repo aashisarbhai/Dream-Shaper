@@ -23,6 +23,7 @@ import PlacingOrder from './pages/PlacingOrder';
 import ProductSummary from './pages/ProductSummary'; 
 import Reviews from './pages/Reviews';
 import './index.css';
+import Help from './pages/Help'
 import CartContext, { CartProvider } from './Context/CartContext';
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
           <Route path="/item" element={<ShopCategory category="Item" />} />
           <Route path="/notification" element={<ShopCategory category="Notification" />} />
           <Route path="/wishlist" element={<WishList />} />
-          <Route path="/cart" element={<Cart userId={userId} />} />
+          {/* <Route path="/cart" element={<Cart userId={userId} />} /> */}
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/pages/polaroids" element={<Polaroids />} />
@@ -57,7 +58,7 @@ function App() {
           <Route path="/placing-order/:id" element={<PlacingOrder />} /> 
           <Route path="/product-summary/:id" element={<ProductSummary />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
           </Routes>
         <Footer />
       </BrowserRouter>

@@ -266,27 +266,17 @@ app.post('/productsadd', async (req, res) => {
     res.status(400).send('Error adding product: ' + err.message);
   }
 });
-app.post('/cart', async (req, res) => {
-  const { userId, productId, quantity } = req.body;
-  try {
-    const product = await Product.findById(productId);
-    if (!product) {
-      return res.status(404).json({ message: 'Product not found' });
-    }
 
-    let cartItem = await CartItem.findOne({ userId, productId });
-    if (cartItem) {
-      cartItem.quantity += quantity;
-    } else {
-      cartItem = new CartItem({ userId, productId, quantity });
-    }
 
-    await cartItem.save();
-    res.status(201).json(cartItem);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+
+// Make the server listen to the specified port
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
+
+
+//cart
+
 // Add item to cart
 app.post('/cart', async (req, res) => {
   const { userId, productId, quantity } = req.body;
@@ -313,7 +303,9 @@ app.post('/cart', async (req, res) => {
 // Get cart items for a user
 app.get('/cart/:userId', async (req, res) => {
   try {
-    const cartItems = await CartItem.find({ userId: req.params.userId }).populate('productId');
+    const cartItems = await CartItem.find({ userId: req.params.userId })
+      .populate('productId')  // Populate using the correct field name
+      .exec();
     res.json(cartItems);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -328,10 +320,4 @@ app.delete('/cart/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-});
-
-
-// Make the server listen to the specified port
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });

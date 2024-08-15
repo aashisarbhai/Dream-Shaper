@@ -23,14 +23,14 @@ import PlacingOrder from './pages/PlacingOrder';
 import ProductSummary from './pages/ProductSummary'; 
 import Reviews from './pages/Reviews';
 import './index.css';
-import Help from './pages/Help';
-import Cart from './pages/Cart';
+import CartContext, { CartProvider } from './Context/CartContext';
 
 function App() {
   const userId = "12345";
 
   return (
     <div>
+      <CartProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -61,6 +61,7 @@ function App() {
           </Routes>
         <Footer />
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

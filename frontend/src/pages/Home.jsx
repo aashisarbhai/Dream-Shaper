@@ -16,8 +16,8 @@ const Home = () => {
       <Hero />
       <Qualities/>
       <Categories/>
-      <Reason/>
       <Diy/>
+      <Reason/>
       <Reviews/>
       <div className="whatsapp-float">
         <a href="https://wa.me/7042445757" target='_blank' rel="noopener noreferrer">

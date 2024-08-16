@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Signup.css';
-import login from '../components/photo/login.png'
+import signin from '../components/photo/signin.png'
 import { Link } from 'react-router-dom';
 
 function Signup() {
@@ -31,7 +31,7 @@ function Signup() {
   
   return (
     <div className="signup-container">
-      <img src={login} alt=" " />
+      <img src={signin} alt=" " />
       <form onSubmit={handleSubmit} className="signup-form">
         <h2>Sign Up</h2>
         <p>Already have an account? <Link to="/login">Sign in</Link></p>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
-import login from '../components/photo/login.png'
+import signin from '../components/photo/signin.png'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <img src={login} alt="" />
+      <img src={signin} alt="" />
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Sign in</h2>
         <p>Don't have an account? <Link to="/Signup">Sign up</Link></p>

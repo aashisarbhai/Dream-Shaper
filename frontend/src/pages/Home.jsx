@@ -5,6 +5,7 @@ import Newsletter from '../components/Newsletter'
 import Qualities from '../components/Hero/Qualities';
 import Categories from '../components/Hero/Categories';
 import Reason from '../components/Hero/Reason';
+import Diy from '../components/Hero/Diy';
 import Reviews from '../pages/Reviews';
 import './Home.css'
 
@@ -16,6 +17,7 @@ const Home = () => {
       <Qualities/>
       <Categories/>
       <Reason/>
+      <Diy/>
       <Reviews/>
       <div className="whatsapp-float">
         <a href="https://wa.me/7042445757" target='_blank' rel="noopener noreferrer">

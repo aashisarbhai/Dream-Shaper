@@ -67,7 +67,7 @@ function Reviews() {
           <div className="testimonial">
             <StarRating rating={5} />
             <p>"Absolutely amazing! The quality exceeded my expectations. Will definitely recommend to others!"</p>
-            <p>- Sarah J.</p>
+            <p>- Aashi.</p>
           </div>
         </div>
         <div className="review-slide">
@@ -75,7 +75,7 @@ function Reviews() {
           <div className="testimonial">
             <StarRating rating={4} />
             <p>"Great product! Fast delivery and excellent customer service."</p>
-            <p>- John D.</p>
+            <p>- Rakhi.</p>
           </div>
         </div>
         <div className="review-slide">
@@ -83,7 +83,7 @@ function Reviews() {
           <div className="testimonial">
             <StarRating rating={5} />
             <p>"I'm in love with the craftsmanship. Perfect gift for my loved ones!"</p>
-            <p>- Emily W.</p>
+            <p>- Rashi.</p>
           </div>
         </div>
       </Slider>

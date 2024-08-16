@@ -7,6 +7,7 @@ import Categories from '../components/Hero/Categories';
 import Reason from '../components/Hero/Reason';
 import Diy from '../components/Hero/Diy';
 import Reviews from '../pages/Reviews';
+import Fest from '../components/Hero/Fest';
 import './Home.css'
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Productbar/>
       <Hero />
       <Qualities/>
+      <Fest/>
       <Categories/>
       <Diy/>
       <Reason/>

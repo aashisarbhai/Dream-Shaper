@@ -7,7 +7,11 @@ const app = express();
 const cors = require('cors');
 const CartItem = require('./config/CartItem')
 const Order = require('./config/Order');
-// const path = require('path');
+const multer = require('./config/multer');
+const path = require('path');
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 // // Serve static files from the React app
 // app.use(express.static(path.join(__dirname, 'client/build')));
@@ -258,16 +262,34 @@ app.post('/subscribe', async (req, res) => {
 });
 
 // Add product API
-app.post('/productsadd', async (req, res) => {
-  try {
-    const product = new Product(req.body);
-    const result = await product.save();
-    res.send(result);
-  } catch (err) {
-    res.status(400).send('Error adding product: ' + err.message);
-  }
-});
+app.post('/productsadd', (req, res) => {
+  multer(req, res, async (err) => {
+    if (err) {
+      return res.status(400).send('Error uploading file: ' + err.message);
+    }
 
+    if (!req.file) {
+      return res.status(400).send('Error: Image file is required.');
+    }
+
+    try {
+      // Create a new product with the image path
+      const product = new Product({
+        name: req.body.name,
+        price: req.body.price,
+        image: `/uploads/${req.file.filename}`, // Save the image path in the database
+        vendor: req.body.vendor,
+        delivery: req.body.delivery,
+        category: req.body.category
+      });
+
+      const result = await product.save();
+      res.send(result);
+    } catch (err) {
+      res.status(400).send('Error adding product: ' + err.message);
+    }
+  });
+});
 
 
 // Make the server listen to the specified port

@@ -25,7 +25,10 @@ function Login() {
     try {
       const response = await axios.post('http://localhost:3389/login', formData);
       if (response.data.success) {
+        const { userId } = response.data;
         navigate('/');
+        localStorage.setItem('userId', userId); // Store userId in localStorage
+    return userId;
       }
     } catch (err) {
       if (err.response && err.response.status === 401) {

@@ -1,64 +1,3 @@
-// // PlacingOrder.jsx
-// import React, { useState } from 'react';
-// import { useParams, useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// const PlacingOrder = () => {
-//   const { id } = useParams();
-//   const navigate = useNavigate();
-//   const [formData, setFormData] = useState({
-//     phone: '',
-//     email: '',
-//     address: ''
-//   });
-//   const [error, setError] = useState('');
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try{
-//     const response = await axios.post('http://localhost:3389/order', formData);
-//     if (response.data.success)
-//     { navigate(`/product-summary/${id}`, { state: { formData } });}}
-//     catch (err) {
-//         if (err.response && err.response.status === 401) {
-//           setError('Invalid ');
-//         } else {
-//           setError('Server error. Please try again later.');
-//         }
-//       }
-//   }
-
-//   return (
-//     <div className="placing-order">
-//       <h1>Placing Order</h1>
-//       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label>Phone:</label>
-//           <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
-//         </div>
-//         <div>
-//           <label>Email:</label>
-//           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-//         </div>
-//         <div>
-//           <label>Address:</label>
-//           <textarea name="address" value={formData.address} onChange={handleChange} required />
-//         </div>
-//         <button type="submit">Place Order</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default PlacingOrder;
-
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -68,28 +7,32 @@ const PlacingOrder = () => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const navigate = useNavigate();
-  const { id: productId } = useParams(); 
+  const {id: productId} = useParams(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Debugging: Log the productId
+    console.log("Product ID:", productId);
+    console.log("Sending order data:", { productId, phone, email, address });
+
     try {
       const response = await axios.post('http://localhost:3389/order', {
-        productId,
+        productId,  // Ensure this is correctly sent
         phone,
         email,
         address,
       });
 
       if (response.status === 201) {
-        console.log("Order created");
+        console.log("Order created:", response.data);
         const orderId = response.data._id;
         navigate(`/product-summary/${orderId}`);
       } else {
         console.error('Failed to place order', response);
       }
     } catch (error) {
-      console.error('Error placing order', error);
+      console.error('Error placing order:', error);
     }
   };
 
@@ -118,4 +61,3 @@ const PlacingOrder = () => {
 };
 
 export default PlacingOrder;
-

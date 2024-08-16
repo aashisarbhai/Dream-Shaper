@@ -25,6 +25,7 @@ app.post('/order', async (req, res) => {
   const { productId, phone, email, address } = req.body;
 
   try {
+    console.log('Received productId:', productId);
     const product = await Product.findById(productId);
     if (!product) {
       return res.status(404).json({ message: 'Product not found' });
@@ -63,7 +64,7 @@ app.post('/order', async (req, res) => {
 app.get('/order/:id', async (req, res) => {
   console.log('Received request for order ID:', req.params.id);
   try {
-    const order = await Order.findById(req.params.id).populate('product');
+    const order = await Order.findById(req.params.id).populate('Product');
     if (!order) {
       console.log('Order not found');
       return res.status(404).json({ message: 'Order not found' });

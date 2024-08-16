@@ -1,5 +1,5 @@
 .ProfileSection.popup-menu {
-  background-color: white;
+  background-image: linear-gradient(to bottom, #ffc7e2 0% , #E3A5C7 100%);
   color: black;
   width: 250px;
   padding: 20px;
@@ -10,8 +10,8 @@
 .login-signup-btn {
   width: 100%;
   padding: 10px;
-  background-color: pink;
-  color: black;
+  background-color: white !important;
+  color: black !important;
   border: none;
   border-radius: 5px;
   cursor: pointer;

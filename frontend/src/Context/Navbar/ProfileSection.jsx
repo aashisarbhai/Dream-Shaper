@@ -19,7 +19,7 @@ const ProfileSection = ({ isActive, onClose }) => {
       <p>To access account and manage orders</p>
       
       <Link to="/Login">
-        <button className="login-signup-btn">LOGIN / SIGNUP</button>
+        <button className="login-signup-btn">SIGN IN / SIGN UP</button>
       </Link>
       <ul className="profile-menu">
         {menuItems.map((item, index) => (

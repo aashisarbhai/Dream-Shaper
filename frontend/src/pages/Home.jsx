@@ -8,6 +8,7 @@ import Reason from '../components/Hero/Reason';
 import Diy from '../components/Hero/Diy';
 import Reviews from '../pages/Reviews';
 import Fest from '../components/Hero/Fest';
+import Reel from '../components/Hero/Reel';
 import './Home.css'
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Fest/>
       <Categories/>
       <Diy/>
+      <Reel/>
       <Reason/>
       <Reviews/>
       <div className="whatsapp-float">

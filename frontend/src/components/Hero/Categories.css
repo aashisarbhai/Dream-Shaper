@@ -5,9 +5,10 @@
   }
   
   h1 {
-    font-family: "Lato", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3em;
     text-align: center;
-    color: #333;
+    color: black;
     margin-bottom: 30px;
   }
   

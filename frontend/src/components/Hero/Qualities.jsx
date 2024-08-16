@@ -9,6 +9,10 @@ function Qualities() {
         <p>Worldwide Shipping</p>
       </div>
       <div className="quality-item">
+        <i className="fa-solid fa-clock-rotate-left"></i>
+        <p>7-Day Replacement</p>
+      </div>
+      <div className="quality-item">
         <i className="fa-regular fa-comments"></i>
         <p>24x7 Customer Support</p>
       </div>

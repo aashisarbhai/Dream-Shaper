@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    background-color: #E3A5C7;
+    background-color: white;
   }
   
   .quality-item {
@@ -16,12 +16,13 @@
   
   .quality-item i {
     font-size: 2.5rem;
-    color: #694F8e;
+    color: #1338BE;
     margin-bottom: 10px;
   }
   
   .quality-item p {
-    font-size: 1rem;
+    font-family: "EB Garamond", serif;
+    font-size: 1.6rem;
     color: #333;
     margin: 0;
   }

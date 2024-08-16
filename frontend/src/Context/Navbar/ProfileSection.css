@@ -10,8 +10,8 @@
 .login-signup-btn {
   width: 100%;
   padding: 10px;
-  background-color: white !important;
-  color: black !important;
+  background-color: #694F8E  !important;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;

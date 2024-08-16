@@ -10,7 +10,6 @@ const ProfileSection = ({ isActive, onClose }) => {
     { name: 'Contact Us', path: '/about' }, 
     { name: 'Notifications', path: '/Notification'},
     { name: 'Offers', path: '/offers', isNew: true },
-    { name: 'Saved Addresses', path: '/saved-addresses' } 
   ];
 
   return (

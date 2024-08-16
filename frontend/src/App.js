@@ -25,6 +25,7 @@ import Reviews from './pages/Reviews';
 import './index.css';
 import Help from './pages/Help'
 import CartContext, { CartProvider } from './Context/CartContext';
+import Offers from './pages/Offers';
 
 function App() {
   const userId = "12345";
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/Offers" element={<Offers />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/item" element={<ShopCategory category="Item" />} />
           <Route path="/notification" element={<ShopCategory category="Notification" />} />

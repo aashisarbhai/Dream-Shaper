@@ -26,7 +26,7 @@ import './index.css';
 import Help from './pages/Help'
 import CartContext, { CartProvider } from './Context/CartContext';
 import Offers from './pages/Offers';
-
+import ProductList from './pages/productList';
 function App() {
   const userId = "12345";
 
@@ -43,6 +43,7 @@ function App() {
           <Route path="/item" element={<ShopCategory category="Item" />} />
           <Route path="/notification" element={<ShopCategory category="Notification" />} />
           <Route path="/wishlist" element={<WishList />} />
+          <Route path="/productlist" element ={<ProductList/>}/>
           {/* <Route path="/cart" element={<Cart userId={userId} />} /> */}
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />

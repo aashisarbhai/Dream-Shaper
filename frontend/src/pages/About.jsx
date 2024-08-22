@@ -47,7 +47,13 @@ function About() {
       <br />
       {/* Video iframes go here */}
 
-      
+      <footer style={styles.footer}>
+        <p>© 2024 DREAM SHAPER | All Rights Reserved</p>
+        <nav>
+          <a href="/" style={styles.link}>Home</a>
+          <a href="/contact" style={styles.link}>Contact Us</a>
+        </nav>
+      </footer>
     </div>
   );
 }
